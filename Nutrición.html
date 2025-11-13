@@ -7,9 +7,8 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 	<body bgcolor="#FFFFFF">
-		
-		<img src="redes.png" width=100%><br>
-        <img src="logo.png" width=100%> 
+		<img src="img/redes.jpg" width=100%><br>
+        <img src="img/logo.jpg" width=100%> 
 		<br>
 		<font color="#FFE4C4" size=5> <b>Servicios </b></font>
         <font color="grey">
@@ -22,7 +21,7 @@
         <br>
         *Todos nuestros paquetes tienen una vigencia de 6 meses a partir de la primera consulta
         </font><br><br><br>
-		<form> 
+		<form id="formulario"> 
 		<table  width="100%">
 			<tr bgcolor="#FFE4C4"  align="center">
                 <td ><font size="4" color="FFFFFF"><b>Consulta online o presencial</b></font></td>
@@ -55,7 +54,7 @@
 	</table>
 	<table>
 		<tr align="center">
-		<img src="contacto.png" width=100%>   
+		<img src="img/contacto.jpg" width=100%>   
         </tr>
 	</table>
 	<table  width="70%" align="center">
@@ -63,6 +62,7 @@
 			<th><font color ="white" size="3">AGENDA TU CITA</font><br></th>
 			<th bgcolor="#FFE4C4"><font size="3" color="white" >TIPO DE PAGO</font><br></th>
 			<th bgcolor="#FFE4C4"><font size="3"color="white">REQUIERE FACTURA?(si o no) </font><br></th>
+			<th bgcolor="#FFE4C4"><font size="3"color="white">Calcular</font></th>
 		</tr>
 		<tr>
             <td>
@@ -70,7 +70,7 @@
 			    Domicilio<input type="text" size="25"><br>
 		</td>
 		<td>
-			<select >
+			<select>
 				<option>Efectivo  +0%</option>
 				<option>Tarjeta de Credito o Debito +6%</option>
 				<option>Transferencia Electronica + 3%</option>
@@ -79,8 +79,12 @@
             <td>
 				<input type="text" name="FAC" size="15"> 
 			</td>
-		</tr>			
-		</table>	
+			<td>
+				<button type="button" onclick="calcular()">Calcular total de precio</button>
+				<input type="text" id="total" readonly>
+			</td>
+		</tr>
+	</table>	
         <hr color="black">
 		</form>
 	</body>
