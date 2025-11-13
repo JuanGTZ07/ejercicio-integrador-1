@@ -30,24 +30,24 @@
     		</tr>    
         <tr>
             <td>
-		        <input type="radio" ><font color="grey">Primera Consulta $850 MXN<br>
-				<input type="radio">Seguimiento  $700 MXN<br>
-				<input type="radio">Paquete de 3 Consultas  $2,000 MXN<br>
-				<input type="radio" >Paquete  pareja  $5,000 MXN<br>
+		        <input type="radio" name="paquetes" id="primera" value="850"><font color="grey">Primera Consulta $850 MXN<br>
+				<input type="radio" name="paquetes" id="seguimiento" value="700">Seguimiento  $700 MXN<br>
+				<input type="radio" name="paquetes" id="tres" value="2000">Paquete de 3 Consultas  $2,000 MXN<br>
+				<input type="radio" name="paquetes" id="pareja" value="5000">Paquete  pareja  $5,000 MXN<br>
                 </font>
             </td>
             <td>
-			<select>
-				<option><font color="grey">Análisis de Composición corporal Sin consulta +  $200</font></option>
-				<option><font color="grey">Análisis de Composición corporal con consulta +  $1000</font></option>
+			<select id="analisis" name="analisis">
+				<option value="sinconsulta" id="sinconsulta"><font color="grey">Análisis de Composición corporal Sin consulta +  $200</font></option>
+				<option value="conconsulta" id="conconsulta"><font color="grey">Análisis de Composición corporal con consulta +  $1000</font></option>
 			</select>
                 
 			</td>
 			<td>
 			<font color="grey">
-		    	<input type="checkbox">Recetas $1,000<br>
-				<input type="checkbox">Ejercicios  $1,000<br>
-				<input type="checkbox">Revista semanal $150<br>
+		    	<input type="checkbox" id="recetas" name="recetas">Recetas $1,000<br>
+				<input type="checkbox" id="ejercicios" name="ejercicios">Ejercicios  $1,000<br>
+				<input type="checkbox" id="revisita" name="revisita">Revista semanal $150<br>
                 </font>
 			</td>
 		</tr>	
@@ -70,18 +70,19 @@
 			    Domicilio<input type="text" size="25"><br>
 		</td>
 		<td>
-			<select>
-				<option>Efectivo  +0%</option>
-				<option>Tarjeta de Credito o Debito +6%</option>
-				<option>Transferencia Electronica + 3%</option>
+			<select name="pago" id="pago">
+				<option value="efectivo" id="efectivo">Efectivo  +0%</option>
+				<option value="tarjeta" id="tarjeta">Tarjeta de Credito o Debito +6%</option>
+				<option value="transferencia" id="transferencia">Transferencia Electronica + 3%</option>
 			</select>
 			</td>	  
             <td>
-				<input type="text" name="FAC" size="15"> 
+				<input type="text" id="FAC" name="FAC" size="15"> 
 			</td>
 			<td>
 				<button type="button" onclick="calcular()">Calcular total de precio</button>
-				<input type="text" id="total" readonly>
+				<br>
+				<div id="total"> Total $0.00 </div>
 			</td>
 		</tr>
 	</table>	
