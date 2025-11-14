@@ -30,24 +30,24 @@
     		</tr>    
         <tr>
             <td>
-		        <input type="radio" name="paquetes" id="primera" value="850"><font color="grey">Primera Consulta $850 MXN<br>
-				<input type="radio" name="paquetes" id="seguimiento" value="700">Seguimiento  $700 MXN<br>
-				<input type="radio" name="paquetes" id="tres" value="2000">Paquete de 3 Consultas  $2,000 MXN<br>
-				<input type="radio" name="paquetes" id="pareja" value="5000">Paquete  pareja  $5,000 MXN<br>
+		        <input type="radio" name="paquetes" id="primera" value="850" onclick="calcular()"><font color="grey">Primera Consulta $850 MXN<br>
+				<input type="radio" name="paquetes" id="seguimiento" value="700" onclick="calcular()"> Seguimiento  $700 MXN<br>
+				<input type="radio" name="paquetes" id="tres" value="2000" onclick="calcular()">Paquete de 3 Consultas  $2,000 MXN<br>
+				<input type="radio" name="paquetes" id="pareja" value="5000" onclick="calcular()">Paquete  pareja  $5,000 MXN<br>
                 </font>
             </td>
             <td>
-			<select id="analisis" name="analisis">
-				<option value="sinconsulta" id="sinconsulta"><font color="grey">Análisis de Composición corporal Sin consulta +  $200</font></option>
-				<option value="conconsulta" id="conconsulta"><font color="grey">Análisis de Composición corporal con consulta +  $1000</font></option>
+			<select id="analisis" name="analisis" onchange="calcular()">
+				<option value="sinconsulta" id="sinconsulta" ><font color="grey">Análisis de Composición corporal Sin consulta +  $200</font></option>
+				<option value="conconsulta" id="conconsulta" ><font color="grey">Análisis de Composición corporal con consulta +  $1000</font></option>
 			</select>
                 
 			</td>
 			<td>
 			<font color="grey">
-		    	<input type="checkbox" id="recetas" name="recetas" data-precio="1000">Recetas $1,000<br>
-				<input type="checkbox" id="ejercicios" name="ejercicios" data-precio="1000">Ejercicios  $1,000<br>
-				<input type="checkbox" id="revisita" name="revisita" data-precio="150">Revista semanal $150<br>
+		    	<input type="checkbox" id="recetas" name="recetas" data-precio="1000" onclick="calcular()">Recetas $1,000<br>
+				<input type="checkbox" id="ejercicios" name="ejercicios" data-precio="1000" onclick="calcular()">Ejercicios  $1,000<br>
+				<input type="checkbox" id="revisita" name="revisita" data-precio="150" onclick="calcular()">Revista semanal $150<br>
                 </font>
 			</td>
 		</tr>	
@@ -62,7 +62,6 @@
 			<th><font color ="white" size="3">AGENDA TU CITA</font><br></th>
 			<th bgcolor="#FFE4C4"><font size="3" color="white" >TIPO DE PAGO</font><br></th>
 			<th bgcolor="#FFE4C4"><font size="3"color="white">REQUIERE FACTURA?(si o no) </font><br></th>
-			<th bgcolor="#FFE4C4"><font size="3"color="white">Calcular</font></th>
 		</tr>
 		<tr>
             <td>
@@ -70,24 +69,27 @@
 			    Domicilio<input type="text" size="25"><br>
 		</td>
 		<td>
-			<select name="pago" id="pago">
+			<select name="pago" id="pago" onchange="calcular()">
 				<option value="efectivo" id="efectivo">Efectivo  +0%</option>
 				<option value="tarjeta" id="tarjeta">Tarjeta de Credito o Debito +6%</option>
 				<option value="transferencia" id="transferencia">Transferencia Electronica + 3%</option>
 			</select>
 			</td>	  
             <td>
-				<input type="text" id="FAC" name="FAC" size="15"> 
-			</td>
-			<td>
-				<button type="button" onclick="calcular()">Calcular total de precio</button>
-				<br>
-				<div id="total"> Total $0.00 </div>
+				<select name="FAC" id="FAC" onchange="calcular()">
+					<option value="no" id="no"> no </option>
+					<option value="si" id="si"> si </option>
+				</select> 
 			</td>
 		</tr>
 	</table>	
         <hr color="black">
 		</form>
+		<div id="precio">
+			<div id="total"> Total $0.00 </div>
+			<p id="mensaje"></p>
+			<p id="mensaje2" style="color: green;"></p>
+		</div>
 	</body>
 	<script src="javascript.js"></script>
 </html>

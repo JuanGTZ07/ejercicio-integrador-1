@@ -1,0 +1,11 @@
+#precio {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgb(200, 210, 255);
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 0 0 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
